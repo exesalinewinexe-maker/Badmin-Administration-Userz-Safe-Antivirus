@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Badmin Scanner</title>
+<meta name="theme-color" content="#000000">
+<style>
+body {
+  background: #0a0a0a;
+  color: #00ff00;
+  font-family: Consolas, monospace;
+  text-align: center;
+  padding: 20px;
+}
+
+h1 {
+  color: #0f0;
+  text-shadow: 0 0 10px #0f0;
+}
+
+#scanBox {
+  border: 2px solid #0f0;
+  padding: 20px;
+  margin-top: 20px;
+  background: #000;
+}
+
+#progress {
+  width: 100%;
+  height: 25px;
+  background: #003300;
+  border: 1px solid #0f0;
+  margin-top: 10px;
+}
+
+#bar {
+  height: 100%;
+  width: 0%;
+  background: #00ff00;
+  transition: width 0.1s linear;
+}
+
+#log {
+  text-align: left;
+  height: 200px;
+  overflow-y: auto;
+  border: 1px solid #0f0;
+  padding: 10px;
+  margin-top: 20px;
+  background: #000;
+  font-size: 14px;
+}
+
+button {
+  padding: 15px 25px;
+  font-size: 18px;
+  margin-top: 20px;
+  background: #0f0;
+  border: none;
+  cursor: pointer;
+}
+</style>
+</head>
+<body>
+
+<h1>Badmin Administration Userz Safe Antivirus</h1>
+<p>Very Safe No Joke™ Scanner</p>
+
+<div id="scanBox">
+  <button onclick="startScan()">Start Scan</button>
+
+  <div id="progress">
+    <div id="bar"></div>
+  </div>
+
+  <div id="log"></div>
+</div>
+
+<script>
+function startScan() {
+  const bar = document.getElementById("bar");
+  const log = document.getElementById("log");
+  log.innerHTML = "";
+  bar.style.width = "0%";
+
+  let progress = 0;
+  const fakeLogs = [
+    "Initializing ROAM engine...",
+    "Scanning system32...",
+    "Checking Badmin particle integrity...",
+    "Decrypting encrypted unencrypted files...",
+    "Detecting anomalies...",
+    "Analyzing suspicious spaghetti code...",
+    "Stabilizing quantum firewall...",
+    "Finalizing scan..."
+  ];
+
+  const interval = setInterval(() => {
+    progress += 2;
+    bar.style.width = progress + "%";
+
+    if (progress % 10 === 0) {
+      const msg = fakeLogs[Math.floor(Math.random() * fakeLogs.length)];
+      log.innerHTML += msg + "<br>";
+      log.scrollTop = log.scrollHeight;
+    }
+
+    if (progress >= 100) {
+      clearInterval(interval);
+      log.innerHTML += "<br><b>Scan Complete: No Threats Found (Very Safe No Joke™)</b>";
+    }
+  }, 100);
+}
+</script>
+
+</body>
+</html>
