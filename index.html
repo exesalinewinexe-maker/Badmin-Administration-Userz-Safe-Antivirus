@@ -29,7 +29,12 @@ Download Badmin Antivirus
 <script>
 if ('serviceWorker' in navigator) {
   navigator.serviceWorker.register('service-worker.js');
-}
+}<script>
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('service-worker.js')
+      .then(() => console.log('Service Worker registered!'));
+  }
+</script>
 </script>
 
 </body>
