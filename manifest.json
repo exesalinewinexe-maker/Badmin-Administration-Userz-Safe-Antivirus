@@ -1,0 +1,15 @@
+{
+  "name": "Badmin Administration Userz Safe Antivirus",
+  "short_name": "Badmin",
+  "start_url": "index.html",
+  "display": "standalone",
+  "background_color": "#000000",
+  "theme_color": "#00ff00",
+  "icons": [
+    {
+      "src": "icon.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    }
+  ]
+}
